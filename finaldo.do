@@ -15,14 +15,14 @@ rename fyear year
 drop if cusip==""
 duplicates drop cusip year, force
  
-save "/Users/tangyubing/Desktop/45884abe6bf48e82.dta", replace
+save "/Users/xiqia/Downloads/45884abe6bf48e82.dta", replace
  
-use "/Users/tangyubing/Desktop/45884abe6bf48e82.dta"
+use "/Users/xiqia/Downloads/45884abe6bf48e82.dta"
  
 gen cusip6N= substr(cusip,1,6)
 duplicates drop cusip year, force
 drop if cusip==""
-joinby year cusip6N using "/Users/tangyubing/Desktop/45884abe6bf48e82.dta", unmatched(none)
+joinby year cusip6N using "/Users/xiqia/Downloads/45884abe6bf48e82.dta", unmatched(none)
  
 drop if missing (at)
  
